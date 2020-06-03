@@ -54,8 +54,8 @@ def run(size, dataset):
                     res, res_mean = m.run(d, AdaBoostClassifier()) # decision_function (predict_proba exists)
                 elif im == "ANN":
                     res, res_mean = m.run(d, MLPClassifier())
-            except:
-                print("Didn't manage with model " + im)
+            except Exception as err:
+                print("Didn't manage with model " + im + ": ", err)
                 continue
             sys.stdout.flush()
             with open('results/models/may30_%s_%s.pkl' % (ds, im), 'wb') as output:

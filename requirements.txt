@@ -1,0 +1,3 @@
+autograd
+pandas<1
+scikit-learn
